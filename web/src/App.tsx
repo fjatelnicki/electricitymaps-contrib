@@ -3,6 +3,7 @@ import { Capacitor } from '@capacitor/core';
 import { ToastProvider } from '@radix-ui/react-toast';
 import * as Sentry from '@sentry/react';
 import useGetState from 'api/getState';
+import { AppStoreBanner } from 'components/AppStoreBanner';
 import LoadingOverlay from 'components/LoadingOverlay';
 import { OnboardingModal } from 'components/modals/OnboardingModal';
 import ErrorComponent from 'features/error-boundary/ErrorBoundary';
@@ -58,6 +59,7 @@ export default function App(): ReactElement {
   return (
     <Suspense fallback={<div />}>
       <main className="fixed flex h-screen w-screen flex-col">
+        <AppStoreBanner />
         <ToastProvider duration={20_000}>
           <Suspense>
             <Header />
